@@ -10,7 +10,7 @@
  *    Chris Casola
  *    Andrew Hurle
  ******************************************************************************/
-// Andrew's test
+
 package edu.wpi.cs.wpisuitetng.janeway;
 
 import java.io.BufferedReader;
