@@ -35,7 +35,7 @@ import edu.wpi.cs.wpisuitetng.janeway.modules.ModuleLoader;
  * constructs the GUI.
  *
  */
-public class Janeway {
+public class Janeway { // whatup
 	
 	/** List containing all modules */
 	protected static List<IJanewayModule> modules;
