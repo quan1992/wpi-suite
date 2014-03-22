@@ -63,10 +63,13 @@ public class ListOfGames extends JPanel {
 		
 		JPanel SummaryPanel = new JPanel();
 		OptionalPanel.add(SummaryPanel, "name_292469201088950");
-		SummaryPanel.setLayout(new MigLayout("", "[grow][]", "[grow][grow][grow]"));
+		SummaryPanel.setLayout(new MigLayout("", "[grow][]", "[][grow][grow][grow]"));
+		
+		JLabel lblSummary = new JLabel("Summary:");
+		SummaryPanel.add(lblSummary, "cell 0 0");
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		SummaryPanel.add(scrollPane_1, "cell 0 0,grow");
+		SummaryPanel.add(scrollPane_1, "cell 0 1,grow");
 		
 		table_1 = new JTable();
 		table_1.setModel(new DefaultTableModel(
@@ -89,7 +92,7 @@ public class ListOfGames extends JPanel {
 		JPanel StatsPanel = new JPanel();
 		StatsPanel.setBorder(new TitledBorder(null, "Stats", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		StatsPanel.setToolTipText("test");
-		SummaryPanel.add(StatsPanel, "cell 0 1,grow");
+		SummaryPanel.add(StatsPanel, "cell 0 2,grow");
 		StatsPanel.setLayout(new MigLayout("", "[34px][]", "[16px]"));
 		
 		JLabel lblMean = new JLabel("Mean:");
@@ -106,7 +109,7 @@ public class ListOfGames extends JPanel {
 		
 		JPanel Admin = new JPanel();
 		Admin.setBorder(new TitledBorder(null, "Admin", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		SummaryPanel.add(Admin, "cell 0 2,grow");
+		SummaryPanel.add(Admin, "cell 0 3,grow");
 		Admin.setLayout(new MigLayout("", "[114px][][]", "[16px][20px]"));
 		
 		JLabel lblSetRequirement = new JLabel("Set Requirement");
