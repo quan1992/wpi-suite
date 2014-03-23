@@ -63,13 +63,10 @@ public class TestGUIforListOfGames {
 		btnAddDataSet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ListOfGames log = getListOfGames();
-				((DefaultTableModel)(log.getSummaryTableModel())).addRow(new Object[]{"User1", 5});
-				((DefaultTableModel)(log.getSummaryTableModel())).addRow(new Object[]{"User2", 10});
-				((DefaultTableModel)(log.getSummaryTableModel())).addRow(new Object[]{"User3", 8.1});
-				((DefaultTableModel)(log.getSummaryTableModel())).addRow(new Object[]{"User4", 2.5});
-				log.calcMean();
-				log.calcMedian();
-				
+				log.addUserAndEstimate("User1", 5);
+				log.addUserAndEstimate("User2", 10);
+				log.addUserAndEstimate("User3", 8.1f);
+				log.addUserAndEstimate("User4", 2.5f);
 			}
 		});
 		panel.add(btnAddDataSet);
@@ -77,11 +74,42 @@ public class TestGUIforListOfGames {
 		JButton btnSelectRequirement = new JButton("Select Requirement");
 		btnSelectRequirement.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
 				getListOfGames().flipPanel();
 			}
 		});
+		
+		JButton btnClearTable = new JButton("Clear Table");
+		btnClearTable.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				getListOfGames().clearSummaryTable();
+			}
+		});
+		panel.add(btnClearTable);
 		panel.add(btnSelectRequirement);
+		
+		JButton btnAddGame = new JButton("Add Game");
+		btnAddGame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				getListOfGames().addGame("important requirement", "In progress");
+			}
+		});
+		panel.add(btnAddGame);
+		
+		JButton btnUpdateGame = new JButton("Update Game");
+		btnUpdateGame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				getListOfGames().updateGame("important requirement", "Finished");
+			}
+		});
+		panel.add(btnUpdateGame);
+		
+		JButton btnRemoveGame = new JButton("Remove Game");
+		btnRemoveGame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				getListOfGames().removeGame("important requirement");
+			}
+		});
+		panel.add(btnRemoveGame);
 	}
 
 	public ListOfGames getListOfGames() {

@@ -14,6 +14,8 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.border.TitledBorder;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.CardLayout;
@@ -25,6 +27,9 @@ import java.util.Collections;
 import javax.swing.table.TableModel;
 
 public class ListOfGames extends JPanel {
+	
+	// TODO: show game data in summary panel when it is selected
+	
 	private JTable table;
 	private JTable table_1;
 	private JTextField textField;
@@ -51,7 +56,6 @@ public class ListOfGames extends JPanel {
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null},
 			},
 			new String[] {
 				"Requirement", "Status"
@@ -67,6 +71,14 @@ public class ListOfGames extends JPanel {
 		add(OptionalPanel, "cell 2 0,grow");
 		OptionalPanel.setLayout(new CardLayout(0, 0));
 		
+		JPanel Blank = new JPanel();
+		OptionalPanel.add(Blank, "name_292516405624772");
+		Blank.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblNoRequirementSelected = new JLabel("No Requirement Selected");
+		lblNoRequirementSelected.setHorizontalAlignment(SwingConstants.CENTER);
+		Blank.add(lblNoRequirementSelected);
+		
 		JPanel SummaryPanel = new JPanel();
 		OptionalPanel.add(SummaryPanel, "name_292469201088950");
 		SummaryPanel.setLayout(new MigLayout("", "[grow][]", "[][grow][grow][grow]"));
@@ -80,7 +92,6 @@ public class ListOfGames extends JPanel {
 		table_1 = new JTable();
 		table_1.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null},
 			},
 			new String[] {
 				"User", "Estimate"
@@ -128,13 +139,14 @@ public class ListOfGames extends JPanel {
 		JButton btnOk = new JButton("OK");
 		Admin.add(btnOk, "cell 2 0,aligny center");
 		
-		JPanel Blank = new JPanel();
-		OptionalPanel.add(Blank, "name_292516405624772");
-		Blank.setLayout(new BorderLayout(0, 0));
-		
-		JLabel lblNoRequirementSelected = new JLabel("No Requirement Selected");
-		lblNoRequirementSelected.setHorizontalAlignment(SwingConstants.CENTER);
-		Blank.add(lblNoRequirementSelected);
+		getSummaryTableModel().addTableModelListener(new TableModelListener() {
+			
+			@Override
+			public void tableChanged(TableModelEvent e) {
+				calcMean();
+				calcMedian();
+			}
+		});
 
 	}
 
@@ -175,6 +187,10 @@ public class ListOfGames extends JPanel {
 	 */
 	public float calcMean() {
 		TableModel tm = getSummaryTableModel();
+		if (tm.getRowCount() == 0) {
+			setMeanLabelText("");
+			return 0;
+		}
 		float total = 0;
 		for (int i = 0; i < tm.getRowCount(); i++) {
 			total += (Float)tm.getValueAt(i, 1);
@@ -192,6 +208,10 @@ public class ListOfGames extends JPanel {
 	 */
 	public float calcMedian() {
 		TableModel tm = getSummaryTableModel();
+		if (tm.getRowCount() == 0) {
+			setMedianLabelText("");
+			return 0;
+		}
 		ArrayList<Float> nums = new ArrayList<>();
 		for (int i = 0; i < tm.getRowCount(); i++) {
 			nums.add((Float)tm.getValueAt(i, 1));
@@ -213,5 +233,50 @@ public class ListOfGames extends JPanel {
 	}
 	protected void setSummaryTableModel(TableModel model) {
 		table_1.setModel(model);
+	}
+	
+	public void addGame(String requirement, String status) {
+		DefaultTableModel tm = ((DefaultTableModel)(getEstimateTableModel()));
+		for (int i = 0; i < tm.getRowCount(); i++) {
+			if (tm.getValueAt(i, 0).equals(requirement)) return;
+		}
+		tm.addRow(new Object[] { requirement, status });
+	}
+	
+	public void updateGame(String requirement, String status) {
+		DefaultTableModel tm = ((DefaultTableModel)(getEstimateTableModel()));
+		for (int i = 0; i < tm.getRowCount(); i++) {
+			if (tm.getValueAt(i, 0).equals(requirement)) {
+				tm.setValueAt(status, i, 1);
+			}
+		}
+	}
+	
+	public void removeGame(String requirement) {
+		DefaultTableModel tm = ((DefaultTableModel)(getEstimateTableModel()));
+		for (int i = 0; i < tm.getRowCount(); i++) {
+			if (tm.getValueAt(i, 0).equals(requirement)) {
+				tm.removeRow(i);
+				return;
+			}
+		}
+	}
+	
+	public void addUserAndEstimate(String username, float estimate) {
+		((DefaultTableModel)(getSummaryTableModel())).addRow(new Object[]{username, estimate});
+	}
+	
+	public void clearSummaryTable() {
+		DefaultTableModel tm = ((DefaultTableModel)(getSummaryTableModel()));
+		int num_rows = tm.getRowCount();
+		for (int i = num_rows - 1; i >= 0; i--) {
+			tm.removeRow(i);
+		}
+	}
+	public TableModel getEstimateTableModel() {
+		return table.getModel();
+	}
+	public void setEstimateTableModel(TableModel model_1) {
+		table.setModel(model_1);
 	}
 }
