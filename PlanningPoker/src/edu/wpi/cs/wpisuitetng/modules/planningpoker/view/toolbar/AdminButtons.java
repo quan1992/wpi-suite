@@ -11,7 +11,6 @@ import javax.swing.SwingConstants;
 import edu.wpi.cs.wpisuitetng.janeway.gui.container.toolbar.ToolbarGroupView;
 
 import java.awt.Color;
-import java.awt.Component;
 
 /**
  * @author Dan
