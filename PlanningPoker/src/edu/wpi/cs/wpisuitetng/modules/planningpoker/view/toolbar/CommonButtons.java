@@ -4,11 +4,15 @@
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.toolbar;
 
 import edu.wpi.cs.wpisuitetng.janeway.gui.container.toolbar.ToolbarGroupView;
+import edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.NewGameDialog;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * this is an example of buttons
@@ -27,6 +31,14 @@ public class CommonButtons extends ToolbarGroupView {
 		
 		this.contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.X_AXIS));
 		this.setPreferredWidth(350);
+		// Adding functionality to new game button, not sure if this is where this should go --nfbrown
+		newGameButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				NewGameDialog newGameDialog = new NewGameDialog();
+				newGameDialog.setVisible(true);
+			}
+		});
 		
 		this.newGameButton.setHorizontalAlignment(SwingConstants.CENTER);
 		this.resultsButton.setHorizontalAlignment(SwingConstants.CENTER);
