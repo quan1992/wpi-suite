@@ -1,15 +1,18 @@
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 
 import javax.swing.JPanel;
-import java.awt.BorderLayout;
 import javax.swing.JTextArea;
+
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.border.LineBorder;
+
 import java.awt.Color;
+
 import javax.swing.SwingConstants;
 
 /**
@@ -17,6 +20,7 @@ import javax.swing.SwingConstants;
  * @author llhunker, blammeson, dbtrue
  *
  */
+@SuppressWarnings("serial")
 public class DiscussionPanel extends JPanel {
 	private JTextField txtEnterMessageHere;
 	public DiscussionPanel() {
