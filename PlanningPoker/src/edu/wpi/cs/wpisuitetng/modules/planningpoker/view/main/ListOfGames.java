@@ -19,12 +19,18 @@ import javax.swing.JButton;
 import java.awt.CardLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.Collections;
+
+import javax.swing.table.TableModel;
 
 public class ListOfGames extends JPanel {
 	private JTable table;
 	private JTable table_1;
 	private JTextField textField;
 	private JPanel OptionalPanel;
+	private JLabel label;
+	private JLabel label_1;
 
 	/**
 	 * Create the panel.
@@ -98,13 +104,13 @@ public class ListOfGames extends JPanel {
 		JLabel lblMean = new JLabel("Mean:");
 		StatsPanel.add(lblMean, "flowy,cell 0 0,alignx right,aligny top");
 		
-		JLabel label = new JLabel("");
+		label = new JLabel("");
 		StatsPanel.add(label, "cell 1 0,aligny center");
 		
 		JLabel lblMedian = new JLabel("Median:");
 		StatsPanel.add(lblMedian, "cell 0 1,alignx right");
 		
-		JLabel label_1 = new JLabel("");
+		label_1 = new JLabel("");
 		StatsPanel.add(label_1, "cell 1 1,aligny center");
 		
 		JPanel Admin = new JPanel();
@@ -136,10 +142,76 @@ public class ListOfGames extends JPanel {
 		return OptionalPanel;
 	}
 	
+	/**
+	 * Switches the right summary panel between a blank panel for when no game is selected to a
+	 * summary panel showing stats about the selected game
+	 * @author tcarmstrong
+	 */
 	public void flipPanel(){
 		JPanel OptionalPanel = getOptionalPanel();
 		CardLayout cl = (CardLayout) OptionalPanel.getLayout();
 		cl.next(OptionalPanel);
 		return;
+	}
+	
+	protected String getMeanLabelText() {
+		return label.getText();
+	}
+	protected void setMeanLabelText(String text) {
+		label.setText(text);
+	}
+	protected String getMedianLabelText() {
+		return label_1.getText();
+	}
+	protected void setMedianLabelText(String text_1) {
+		label_1.setText(text_1);
+	}
+	
+	/**
+	 * Calculates the average value of the submitted estimates in the summary table.
+	 * This method automatically sets the value of the mean label in the panel.
+	 * @return the mean of the estimates
+	 * @author dbeckwith
+	 */
+	public float calcMean() {
+		TableModel tm = getSummaryTableModel();
+		float total = 0;
+		for (int i = 0; i < tm.getRowCount(); i++) {
+			total += (Float)tm.getValueAt(i, 1);
+		}
+		total /= tm.getRowCount();
+		setMeanLabelText(String.format("%.1f", total));
+		return total;
+	}
+	
+	/**
+	 * Calculates the median value of the submitted estimates in the summary table.
+	 * This method automatically sets the value of the median label in the panel.
+	 * @return the median of the estimates
+	 * @author dbeckwith
+	 */
+	public float calcMedian() {
+		TableModel tm = getSummaryTableModel();
+		ArrayList<Float> nums = new ArrayList<>();
+		for (int i = 0; i < tm.getRowCount(); i++) {
+			nums.add((Float)tm.getValueAt(i, 1));
+		}
+		Collections.sort(nums); // need to looke at sorted list of numbers
+		float median;
+		if (nums.size() % 2 == 1) { // if size is odd
+			median = nums.get(nums.size() / 2); // median is middle number
+		}
+		else { // if size if even
+			median = (nums.get(nums.size() / 2) + nums.get(nums.size() / 2 - 1)) / 2; // median is average of two middle numbers
+		}
+		setMedianLabelText(String.format("%.1f", median));
+		return median;
+	}
+	
+	protected TableModel getSummaryTableModel() {
+		return table_1.getModel();
+	}
+	protected void setSummaryTableModel(TableModel model) {
+		table_1.setModel(model);
 	}
 }
