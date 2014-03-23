@@ -5,28 +5,27 @@ package edu.wpi.cs.wpisuitetng.modules.planningpoker.view;
 
 import javax.swing.JTabbedPane;
 import javax.swing.JPanel;
-import javax.swing.JLabel;
 import javax.swing.JTextPane;
+
+import edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.ListOfGames;
 
 /**
  * This is the main panel of the planning poker GUI
- * @author llhunker, blammeson
+ * @author llhunker, blammeson, nfbrown
  *
  */
 @SuppressWarnings("serial")
 public class MainView extends JTabbedPane {
 	
+	ListOfGames listOfGames = new ListOfGames();
 	
 	
 	public MainView(){
 		
-		//this is a placeholder to show functionality
-		//should be replaced with custom panels
-		JPanel tab1 = new JPanel();
-		addTab("Tab 1", null, tab1, null);
 		
-		JLabel lblSomeLabel = new JLabel("Some Label");
-		tab1.add(lblSomeLabel);
+		addTab("Games", null, listOfGames, null);
+		
+		
 		
 		JPanel tab2 = new JPanel();
 		addTab("Tab 2", null, tab2, null);
