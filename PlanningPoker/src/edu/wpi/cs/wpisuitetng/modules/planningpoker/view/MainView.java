@@ -27,9 +27,18 @@ public class MainView extends JTabbedPane {
 		
 		addTab("Games", null, listOfGames, null);
 		
+		
+		
+		//JPanel tab2 = new JPanel();
 		addTab("Discussion", null, discussion, null);
 		
-		
+		/*
+		JTextPane txtpnSomeTextNot = new JTextPane();
+		txtpnSomeTextNot.setEditable(false);
+		txtpnSomeTextNot.setText("Some Text, not editable");
+		tab2.add(txtpnSomeTextNot);
+		*/
+
 		
 	}
 }
