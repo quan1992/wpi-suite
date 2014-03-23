@@ -7,6 +7,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
+import edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.DiscussionPanel;
 import edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.ListOfGames;
 
 /**
@@ -18,6 +19,7 @@ import edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.ListOfGames;
 public class MainView extends JTabbedPane {
 	
 	ListOfGames listOfGames = new ListOfGames();
+	DiscussionPanel discussion = new DiscussionPanel();
 	
 	
 	public MainView(){
@@ -25,15 +27,9 @@ public class MainView extends JTabbedPane {
 		
 		addTab("Games", null, listOfGames, null);
 		
+		addTab("Discussion", null, discussion, null);
 		
 		
-		JPanel tab2 = new JPanel();
-		addTab("Tab 2", null, tab2, null);
-		
-		JTextPane txtpnSomeTextNot = new JTextPane();
-		txtpnSomeTextNot.setEditable(false);
-		txtpnSomeTextNot.setText("Some Text, not editable");
-		tab2.add(txtpnSomeTextNot);
 		
 	}
 }
