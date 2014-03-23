@@ -1,31 +1,31 @@
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 
 import javax.swing.JPanel;
-import java.awt.GridLayout;
-import javax.swing.JList;
+
 import javax.swing.JScrollPane;
-import javax.swing.AbstractListModel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
+
 import java.awt.BorderLayout;
+
 import javax.swing.SwingConstants;
+
 import net.miginfocom.swing.MigLayout;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
+
 import javax.swing.border.TitledBorder;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+
 import java.awt.CardLayout;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.Collections;
 
 import javax.swing.table.TableModel;
 
+@SuppressWarnings("serial")
 public class ListOfGames extends JPanel {
 	
 	// TODO: show game data in summary panel when it is selected
