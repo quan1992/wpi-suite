@@ -208,7 +208,7 @@ public class ListOfGames extends JPanel {
 		return median;
 	}
 	
-	protected TableModel getSummaryTableModel() {
+	public TableModel getSummaryTableModel() {
 		return table_1.getModel();
 	}
 	protected void setSummaryTableModel(TableModel model) {
