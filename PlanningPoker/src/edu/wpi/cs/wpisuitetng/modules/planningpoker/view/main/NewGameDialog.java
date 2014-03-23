@@ -34,7 +34,7 @@ public class NewGameDialog extends JDialog {
 	/**
 	 * Launch the application.
 	 */
-	public static void show(String[] args) {
+	public static void showDialog() {
 		try {
 			NewGameDialog dialog = new NewGameDialog();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
