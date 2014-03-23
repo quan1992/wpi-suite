@@ -14,9 +14,9 @@ import javax.swing.JComboBox;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JCheckBox;
+
 import java.awt.Dimension;
-import javax.swing.SwingConstants;
-import java.awt.Color;
+
 import javax.swing.UIManager;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
@@ -61,16 +61,16 @@ public class NewGameDialog extends JDialog {
 		
 		JLabel lblRequirements = new JLabel("Requirement");
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Item 1", "Item 2", "Item 3"}));
+		JComboBox<String> comboBox = new JComboBox<String>();
+		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Item 1", "Item 2", "Item 3"}));
 		
 		JLabel lblEndTime = new JLabel("End Time");
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Jan", "Feb", "Mar", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}));
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6"}));
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"2014", "2015", "2016"}));
+		JComboBox<String> comboBox_1 = new JComboBox<String>();
+		comboBox_1.setModel(new DefaultComboBoxModel<String>(new String[] {"Jan", "Feb", "Mar", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}));
+		JComboBox<String> comboBox_2 = new JComboBox<String>();
+		comboBox_2.setModel(new DefaultComboBoxModel<String>(new String[] {"1", "2", "3", "4", "5", "6"}));
+		JComboBox<String> comboBox_3 = new JComboBox<String>();
+		comboBox_3.setModel(new DefaultComboBoxModel<String>(new String[] {"2014", "2015", "2016"}));
 		
 		JCheckBox chckbxEmail = new JCheckBox("Email");
 		

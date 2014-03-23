@@ -3,15 +3,14 @@ package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.JEditorPane;
 import javax.swing.JTextArea;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import java.awt.FlowLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Font;
 import java.awt.Dimension;
 
+@SuppressWarnings("serial")
 public class RequirementPanel extends JPanel {
 	private JTextField nameField;
 

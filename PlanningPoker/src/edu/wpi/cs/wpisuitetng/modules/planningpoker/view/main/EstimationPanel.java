@@ -3,18 +3,14 @@ package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import java.awt.GridLayout;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
-import com.jgoodies.forms.factories.FormFactory;
-import java.awt.FlowLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
+
 import java.awt.Font;
 import java.awt.Dimension;
 
+@SuppressWarnings("serial")
 public class EstimationPanel extends JPanel {
 	private JTextField estimateField;
 

@@ -4,7 +4,6 @@
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view;
 
 import javax.swing.JTabbedPane;
-import javax.swing.JSplitPane;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
