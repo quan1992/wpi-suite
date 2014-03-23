@@ -196,12 +196,12 @@ public class ListOfGames extends JPanel {
 		for (int i = 0; i < tm.getRowCount(); i++) {
 			nums.add((Float)tm.getValueAt(i, 1));
 		}
-		Collections.sort(nums); // need to looke at sorted list of numbers
+		Collections.sort(nums); // need to look at sorted list of numbers
 		float median;
 		if (nums.size() % 2 == 1) { // if size is odd
 			median = nums.get(nums.size() / 2); // median is middle number
 		}
-		else { // if size if even
+		else { // if size is even
 			median = (nums.get(nums.size() / 2) + nums.get(nums.size() / 2 - 1)) / 2; // median is average of two middle numbers
 		}
 		setMedianLabelText(String.format("%.1f", median));
