@@ -16,23 +16,23 @@ import javax.swing.SwingConstants;
  *
  */
 @SuppressWarnings("serial")
-public class TestButtons extends ToolbarGroupView {
-	private JButton button1 = new JButton("<html>Test<br />Button 1</html>");
+public class CommonButtons extends ToolbarGroupView {
+	private JButton newGameButton = new JButton("<html>Create<br/>Game</html>");
 	
-	private JButton button2 = new JButton("<html>Test<br />Button 2</html>");
+	private JButton resultsButton = new JButton("<html>View<br/>Results</html>");
 	private final JPanel contentPanel = new JPanel();
 	
-	public TestButtons() {
+	public CommonButtons() {
 		super("");	//not sure if this is needed
 		
 		this.contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.X_AXIS));
 		this.setPreferredWidth(350);
 		
-		this.button1.setHorizontalAlignment(SwingConstants.CENTER);
+		this.newGameButton.setHorizontalAlignment(SwingConstants.CENTER);
+		this.resultsButton.setHorizontalAlignment(SwingConstants.CENTER);
 		
-		
-		contentPanel.add(button1);
-		contentPanel.add(button2);
+		contentPanel.add(newGameButton);
+		contentPanel.add(resultsButton);
 		contentPanel.setOpaque(false);
 		
 		this.add(contentPanel);
