@@ -22,6 +22,7 @@ import edu.wpi.cs.wpisuitetng.janeway.gui.container.toolbar.ToolbarGroupView;
 import java.awt.Color;
 
 /**
+ * Buttons for new game and delete game
  * @author Dan
  *
  */

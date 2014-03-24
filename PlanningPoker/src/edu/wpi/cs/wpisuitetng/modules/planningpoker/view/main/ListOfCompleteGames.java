@@ -37,6 +37,11 @@ import java.util.Collections;
 
 import javax.swing.table.TableModel;
 
+/**
+ * GUI element that shows the completed games and the final estimates.
+ * @author TODO: authors' names
+ *
+ */
 @SuppressWarnings("serial")
 public class ListOfCompleteGames extends JPanel {
 	

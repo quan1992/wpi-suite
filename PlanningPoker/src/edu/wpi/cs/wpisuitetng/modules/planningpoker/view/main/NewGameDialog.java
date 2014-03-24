@@ -36,6 +36,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 /**
  * The dialog box for adding a new planning poker game
+ * @authors TODO: authors' names
  *
  */
 public class NewGameDialog extends JDialog {

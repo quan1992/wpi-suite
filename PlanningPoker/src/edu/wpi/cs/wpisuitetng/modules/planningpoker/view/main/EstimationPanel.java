@@ -23,6 +23,11 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Font;
 import java.awt.Dimension;
 
+/**
+ * This is the panel where the user inputs their estimate for a requirement
+ * @author TODO: authors' names
+ *
+ */
 @SuppressWarnings("serial")
 public class EstimationPanel extends JPanel {
 	private JTextField estimateField;

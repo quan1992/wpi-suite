@@ -37,6 +37,11 @@ import java.util.Collections;
 
 import javax.swing.table.TableModel;
 
+/**
+ * GUI element that shows the ongoing games and the deadline for the requirement
+ * @author TODO: authors' names
+ *
+ */
 @SuppressWarnings("serial")
 public class ListOfOngoingGames extends JPanel {
 	

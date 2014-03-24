@@ -25,7 +25,7 @@ import java.awt.event.MouseEvent;
 
 /**
  * this is an example of buttons
- * @author llhunker, blammeson
+ * @author llhunker, blammeson, nfbrown
  *
  */
 @SuppressWarnings("serial")

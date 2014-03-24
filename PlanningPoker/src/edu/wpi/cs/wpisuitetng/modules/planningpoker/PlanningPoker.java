@@ -21,6 +21,12 @@ import edu.wpi.cs.wpisuitetng.janeway.modules.JanewayTabModel;
 import edu.wpi.cs.wpisuitetng.modules.planningpoker.view.MainView;
 import edu.wpi.cs.wpisuitetng.modules.planningpoker.view.ToolbarView;
 
+/**
+ * This is a module that implements the Planning Poker technique for 
+ * estimation on how long a project requirement will take.
+ * @author TODO: Authors' names
+ *
+ */
 public class PlanningPoker implements IJanewayModule {
 	
 	List<JanewayTabModel> tabs;

@@ -24,6 +24,11 @@ import java.awt.Font;
 import java.awt.Dimension;
 import javax.swing.JTextPane;
 
+/**
+ * This is the panel that allows input of a requirement for Planning Poker
+ * @author TODO: authors' names
+ *
+ */
 @SuppressWarnings("serial")
 public class RequirementPanel extends JPanel {
 	private JTextField nameField;
