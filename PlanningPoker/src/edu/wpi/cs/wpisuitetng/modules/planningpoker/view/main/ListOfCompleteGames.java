@@ -26,7 +26,7 @@ import java.util.Collections;
 import javax.swing.table.TableModel;
 
 @SuppressWarnings("serial")
-public class ListOfGames extends JPanel {
+public class ListOfCompleteGames extends JPanel {
 	
 	// TODO: show game data in summary panel when it is selected
 	
@@ -40,15 +40,12 @@ public class ListOfGames extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public ListOfGames() {
+	public ListOfCompleteGames() {
 		setLayout(new MigLayout("", "[][450px][grow][grow]", "[300px,grow]"));
 		
 		JPanel ListPanel = new JPanel();
 		add(ListPanel, "cell 1 0,grow");
 		ListPanel.setLayout(new BorderLayout(0, 0));
-		
-		JLabel lblEstimatesPending = new JLabel("Estimates Pending:");
-		ListPanel.add(lblEstimatesPending, BorderLayout.NORTH);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		ListPanel.add(scrollPane, BorderLayout.CENTER);
