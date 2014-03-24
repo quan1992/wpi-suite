@@ -32,7 +32,7 @@ public class MainView extends JTabbedPane {
 		listOfOngoingGames.flipPanel();		//for demonstration purposes
 		addTab("Complete", null, listOfCompleteGames, null);
 		listOfCompleteGames.flipPanel();	//for demonstration purposes
-		addTab("Rquirement x", null, dGame1, null);
+		addTab("Requirement x", null, dGame1, null);
 		
 	
 		
