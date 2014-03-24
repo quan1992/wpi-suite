@@ -4,10 +4,8 @@
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view;
 
 import javax.swing.JTabbedPane;
-import javax.swing.JPanel;
-import javax.swing.JTextPane;
-
 import edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.DiscussionPanel;
+import edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.DistributedGame;
 import edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.ListOfGames;
 
 /**
@@ -20,6 +18,7 @@ public class MainView extends JTabbedPane {
 	
 	ListOfGames listOfGames = new ListOfGames();
 	DiscussionPanel discussion = new DiscussionPanel();
+	DistributedGame dGame1 = new DistributedGame();	//only for testing purposes
 	
 	
 	public MainView(){
@@ -27,18 +26,10 @@ public class MainView extends JTabbedPane {
 		
 		addTab("Games", null, listOfGames, null);
 		
-		
-		
-		//JPanel tab2 = new JPanel();
 		addTab("Discussion", null, discussion, null);
+		addTab("Rquirement x", null, dGame1, null);
 		
-		/*
-		JTextPane txtpnSomeTextNot = new JTextPane();
-		txtpnSomeTextNot.setEditable(false);
-		txtpnSomeTextNot.setText("Some Text, not editable");
-		tab2.add(txtpnSomeTextNot);
-		*/
-
+	
 		
 	}
 }
