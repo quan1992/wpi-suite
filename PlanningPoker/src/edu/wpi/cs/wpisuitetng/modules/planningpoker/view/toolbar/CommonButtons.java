@@ -37,7 +37,6 @@ public class CommonButtons extends ToolbarGroupView {
     
     private JButton newGameButton = new JButton("<html>Create<br/>Game</html>");
     
-    private JButton resultsButton = new JButton("<html>View<br/>Results</html>");
     private final JPanel contentPanel = new JPanel();
     
     public CommonButtons() {
@@ -56,10 +55,8 @@ public class CommonButtons extends ToolbarGroupView {
         });
         
         newGameButton.setHorizontalAlignment(SwingConstants.CENTER);
-        resultsButton.setHorizontalAlignment(SwingConstants.CENTER);
         
         contentPanel.add(newGameButton);
-        contentPanel.add(resultsButton);
         contentPanel.setOpaque(false);
         
         this.add(contentPanel);

@@ -34,7 +34,6 @@ public class AdminButtons extends ToolbarGroupView {
     private static final long serialVersionUID = 312905811728893535L;
     private JButton newGameButton = new JButton(
             "<html>End<br/>Estimation</html>");
-    private JButton btnDeleteGame = new JButton("<html>Delete<br/>Game</html>");
     
     private final JPanel contentPanel = new JPanel();
     
@@ -45,11 +44,8 @@ public class AdminButtons extends ToolbarGroupView {
         setPreferredWidth(350);
         
         newGameButton.setHorizontalAlignment(SwingConstants.CENTER);
-        btnDeleteGame.setHorizontalAlignment(SwingConstants.CENTER);
-        btnDeleteGame.setForeground(Color.RED);
         
         contentPanel.add(newGameButton);
-        contentPanel.add(btnDeleteGame);
         contentPanel.setOpaque(false);
         
         this.add(contentPanel);
