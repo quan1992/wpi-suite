@@ -20,7 +20,12 @@ import java.awt.Dimension;
 import javax.swing.UIManager;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
-
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+/**
+ * The dialog box for adding a new planning poker game
+ *
+ */
 public class NewGameDialog extends JDialog {
 
 	/**
@@ -146,6 +151,12 @@ public class NewGameDialog extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("OK");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						//set action for ok button here
+						setVisible(false);
+					}
+				});
 				okButton.setBackground(UIManager.getColor("Button.background"));
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
@@ -153,6 +164,12 @@ public class NewGameDialog extends JDialog {
 			}
 			{
 				JButton cancelButton = new JButton("Cancel");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						//set action for cancel button here
+						setVisible(false);
+					}
+				});
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
 			}
