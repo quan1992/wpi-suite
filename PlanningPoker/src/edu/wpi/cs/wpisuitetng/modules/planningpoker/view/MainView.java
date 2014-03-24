@@ -18,6 +18,7 @@ import edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.ListOfOngoingGames
 @SuppressWarnings("serial")
 public class MainView extends JTabbedPane {
 	
+	ListOfOngoingGames userQueue = new ListOfOngoingGames();
 	ListOfOngoingGames listOfOngoingGames = new ListOfOngoingGames();
 	ListOfCompleteGames listOfCompleteGames = new ListOfCompleteGames();
 	DiscussionPanel discussion = new DiscussionPanel();
@@ -26,9 +27,9 @@ public class MainView extends JTabbedPane {
 	
 	public MainView(){
 		
-		
+		addTab("Queue", null, userQueue, null);
 		addTab("Current", null, listOfOngoingGames, null);
-		listOfOngoingGames.flipPanel();
+		listOfOngoingGames.flipPanel();		//for demonstration purposes
 		addTab("Complete", null, listOfCompleteGames, null);
 		listOfCompleteGames.flipPanel();	//for demonstration purposes
 		addTab("Rquirement x", null, dGame1, null);
