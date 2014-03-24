@@ -12,30 +12,20 @@
 
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 
-import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.JLabel;
-
-import java.awt.BorderLayout;
-
 import javax.swing.SwingConstants;
-
-import net.miginfocom.swing.MigLayout;
-
-import javax.swing.border.TitledBorder;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-
-import java.awt.CardLayout;
-import java.util.ArrayList;
-import java.util.Collections;
-
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+
+import net.miginfocom.swing.MigLayout;
 
 /**
  * GUI element that shows the ongoing games and the deadline for the requirement
@@ -108,9 +98,11 @@ public class ListOfOngoingGames extends JPanel {
 				"User", "Status"
 			}
 		) {
+			@SuppressWarnings("rawtypes")
 			Class[] columnTypes = new Class[] {
 				String.class, Float.class
 			};
+			@SuppressWarnings({ "unchecked", "rawtypes" })
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
