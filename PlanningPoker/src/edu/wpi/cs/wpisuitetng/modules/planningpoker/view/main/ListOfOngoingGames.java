@@ -26,21 +26,18 @@ import java.util.Collections;
 import javax.swing.table.TableModel;
 
 @SuppressWarnings("serial")
-public class ListOfCompleteGames extends JPanel {
+public class ListOfOngoingGames extends JPanel {
 	
 	// TODO: show game data in summary panel when it is selected
 	
 	private JTable table;
 	private JTable table_1;
-	private JTextField textField;
 	private JPanel OptionalPanel;
-	private JLabel label;
-	private JLabel label_1;
 
 	/**
 	 * Create the panel.
 	 */
-	public ListOfCompleteGames() {
+	public ListOfOngoingGames() {
 		setLayout(new MigLayout("", "[][450px][grow][grow]", "[300px,grow]"));
 		
 		JPanel ListPanel = new JPanel();
@@ -55,7 +52,7 @@ public class ListOfCompleteGames extends JPanel {
 			new Object[][] {
 			},
 			new String[] {
-				"Requirement", "Final Estimate"
+				"Requirement", "Deadline"
 			}
 		));
 		scrollPane.setViewportView(table);
@@ -91,7 +88,7 @@ public class ListOfCompleteGames extends JPanel {
 			new Object[][] {
 			},
 			new String[] {
-				"User", "Estimate"
+				"User", "Status"
 			}
 		) {
 			Class[] columnTypes = new Class[] {
@@ -103,45 +100,11 @@ public class ListOfCompleteGames extends JPanel {
 		});
 		scrollPane_1.setViewportView(table_1);
 		
-		JPanel StatsPanel = new JPanel();
-		StatsPanel.setBorder(new TitledBorder(null, "Stats", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		StatsPanel.setToolTipText("test");
-		SummaryPanel.add(StatsPanel, "cell 0 2,grow");
-		StatsPanel.setLayout(new MigLayout("", "[34px][]", "[16px]"));
-		
-		JLabel lblMean = new JLabel("Mean:");
-		StatsPanel.add(lblMean, "flowy,cell 0 0,alignx right,aligny top");
-		
-		label = new JLabel("");
-		StatsPanel.add(label, "cell 1 0,aligny center");
-		
-		JLabel lblMedian = new JLabel("Median:");
-		StatsPanel.add(lblMedian, "cell 0 1,alignx right");
-		
-		label_1 = new JLabel("");
-		StatsPanel.add(label_1, "cell 1 1,aligny center");
-		
-		JPanel Admin = new JPanel();
-		Admin.setBorder(new TitledBorder(null, "Admin", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		SummaryPanel.add(Admin, "cell 0 3,grow");
-		Admin.setLayout(new MigLayout("", "[114px][][]", "[16px][20px]"));
-		
-		JLabel lblSetRequirement = new JLabel("Set Requirement");
-		Admin.add(lblSetRequirement, "cell 0 0,alignx center,aligny center");
-		
-		textField = new JTextField();
-		Admin.add(textField, "cell 1 0,alignx left,aligny center");
-		textField.setColumns(10);
-		
-		JButton btnOk = new JButton("OK");
-		Admin.add(btnOk, "cell 2 0,aligny center");
-		
 		getSummaryTableModel().addTableModelListener(new TableModelListener() {
 			
 			@Override
 			public void tableChanged(TableModelEvent e) {
-				calcMean();
-				calcMedian();
+				
 			}
 		});
 
@@ -163,67 +126,6 @@ public class ListOfCompleteGames extends JPanel {
 		return;
 	}
 	
-	protected String getMeanLabelText() {
-		return label.getText();
-	}
-	protected void setMeanLabelText(String text) {
-		label.setText(text);
-	}
-	protected String getMedianLabelText() {
-		return label_1.getText();
-	}
-	protected void setMedianLabelText(String text_1) {
-		label_1.setText(text_1);
-	}
-	
-	/**
-	 * Calculates the average value of the submitted estimates in the summary table.
-	 * This method automatically sets the value of the mean label in the panel.
-	 * @return the mean of the estimates
-	 * @author dbeckwith
-	 */
-	public float calcMean() {
-		TableModel tm = getSummaryTableModel();
-		if (tm.getRowCount() == 0) {
-			setMeanLabelText("");
-			return 0;
-		}
-		float total = 0;
-		for (int i = 0; i < tm.getRowCount(); i++) {
-			total += (Float)tm.getValueAt(i, 1);
-		}
-		total /= tm.getRowCount();
-		setMeanLabelText(String.format("%.1f", total));
-		return total;
-	}
-	
-	/**
-	 * Calculates the median value of the submitted estimates in the summary table.
-	 * This method automatically sets the value of the median label in the panel.
-	 * @return the median of the estimates
-	 * @author dbeckwith
-	 */
-	public float calcMedian() {
-		TableModel tm = getSummaryTableModel();
-		if (tm.getRowCount() == 0) {
-			setMedianLabelText("");
-			return 0;
-		}
-		ArrayList<Float> nums = new ArrayList<>();
-		for (int i = 0; i < tm.getRowCount(); i++) {
-			nums.add((Float)tm.getValueAt(i, 1));
-		}
-		Collections.sort(nums); // need to look at sorted list of numbers
-		float median;
-		if (nums.size() % 2 == 1) { // if size is odd
-			median = nums.get(nums.size() / 2); // median is middle number
-		}
-		else { // if size is even
-			median = (nums.get(nums.size() / 2) + nums.get(nums.size() / 2 - 1)) / 2; // median is average of two middle numbers
-		}
-		setMedianLabelText(String.format("%.1f", median));
-		return median;
-	}
 	
 	public TableModel getSummaryTableModel() {
 		return table_1.getModel();
