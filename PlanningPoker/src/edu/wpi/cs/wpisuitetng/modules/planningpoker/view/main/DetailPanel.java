@@ -1,4 +1,8 @@
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
+<<<<<<< HEAD
+=======
+
+>>>>>>> DetailPanel
 
 /**
  *
