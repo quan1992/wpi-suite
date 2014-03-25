@@ -7,7 +7,7 @@ package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
  */
 /**
  *
- * @author Sonaxaton
+ * @author dbeckwith
  */
 public class AllGamesViewPanel extends javax.swing.JPanel {
 

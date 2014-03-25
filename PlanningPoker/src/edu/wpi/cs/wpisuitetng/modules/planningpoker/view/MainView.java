@@ -18,7 +18,7 @@ import edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.AllGamesViewPanel;
 /**
  * This is the main panel of the planning poker GUI
  * 
- * @author llhunker, blammeson, nfbrown
+ * @author llhunker, blammeson, nfbrown, dbeckwith
  * 
  */
 public class MainView extends JTabbedPane {
