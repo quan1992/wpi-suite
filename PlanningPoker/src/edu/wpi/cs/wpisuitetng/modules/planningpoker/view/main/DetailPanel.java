@@ -1,8 +1,4 @@
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
-<<<<<<< HEAD
-=======
-
->>>>>>> DetailPanel
 
 /**
  *
@@ -14,7 +10,7 @@ public class DetailPanel extends javax.swing.JPanel {
      * Creates new form DetailPanel
      */
     public DetailPanel() {
-	initComponents();
+        initComponents();
     }
 
     /**
@@ -108,7 +104,6 @@ public class DetailPanel extends javax.swing.JPanel {
                 .addGap(13, 13, 13))
         );
     }// </editor-fold>//GEN-END:initComponents
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;

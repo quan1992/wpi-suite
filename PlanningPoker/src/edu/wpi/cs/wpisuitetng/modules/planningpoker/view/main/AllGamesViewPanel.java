@@ -39,6 +39,7 @@ public class AllGamesViewPanel extends javax.swing.JPanel {
         requirementsPanel2 = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.RequirementsPanel();
         jPanel1 = new javax.swing.JPanel();
         votePanel1 = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.VotePanel();
+        detailPanel1 = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.DetailPanel();
 
         SummaryTablePanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -58,6 +59,7 @@ public class AllGamesViewPanel extends javax.swing.JPanel {
 
         jPanel1.setLayout(new java.awt.CardLayout());
         jPanel1.add(votePanel1, "card2");
+        jPanel1.add(detailPanel1, "card3");
 
         jSplitPane1.setRightComponent(jPanel1);
 
@@ -85,6 +87,7 @@ public class AllGamesViewPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel SummaryTablePanel;
+    private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.DetailPanel detailPanel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.RequirementsPanel requirementsPanel2;
