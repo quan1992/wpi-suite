@@ -41,7 +41,7 @@ public class DistributedGame extends JPanel {
                 Double.MIN_VALUE };
         setLayout(gridBagLayout);
         
-        RequirementPanel requirementPanel_1 = new RequirementPanel();
+        RequirementsPanel requirementPanel_1 = new RequirementsPanel();
         GridBagConstraints gbc_requirementPanel_1 = new GridBagConstraints();
         gbc_requirementPanel_1.gridwidth = 2;
         gbc_requirementPanel_1.insets = new Insets(0, 0, 5, 5);
