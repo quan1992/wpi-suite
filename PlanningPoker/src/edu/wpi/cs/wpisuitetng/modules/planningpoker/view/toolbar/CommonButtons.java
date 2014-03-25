@@ -12,10 +12,14 @@
 
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.toolbar;
 
+import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
@@ -34,12 +38,22 @@ public class CommonButtons extends ToolbarGroupView {
      */
     private static final long serialVersionUID = -2589339467561118867L;
     
-    private JButton newGameButton = new JButton("<html>Create<br/>Game</html>");
+    private JButton newGameButton;
     
     private final JPanel contentPanel = new JPanel();
     
     public CommonButtons() {
         super(""); // not sure if this is needed
+        
+        newGameButton = new JButton("<html>Create<br/>Game</html>");
+        
+		try {
+			ImageIcon icon = new ImageIcon(ImageIO.read(getClass().getResource("NewGame.png")));
+			newGameButton.setIcon(icon);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
         
         contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.X_AXIS));
         setPreferredWidth(350);
