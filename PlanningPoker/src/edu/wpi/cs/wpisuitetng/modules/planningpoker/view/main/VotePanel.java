@@ -5,9 +5,13 @@
  */
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
 /**
  * 
- * @author nickbrown
+ * @author nfbrown
  */
 public class VotePanel extends javax.swing.JPanel {
     
@@ -71,78 +75,73 @@ public class VotePanel extends javax.swing.JPanel {
                 });
         
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        setLayout(layout);
         layout.setHorizontalGroup(layout
-                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .createParallelGroup(Alignment.LEADING)
                 .addGroup(
                         layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(
                                         layout.createParallelGroup(
-                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                Alignment.LEADING)
+                                                .addComponent(estimateLabel)
+                                                .addComponent(voteField)
+                                                .addComponent(endsLabel))
+                                .addGap(10)
+                                .addGroup(
+                                        layout.createParallelGroup(
+                                                Alignment.LEADING)
                                                 .addGroup(
                                                         layout.createSequentialGroup()
-                                                                .addComponent(
-                                                                        estimateLabel)
-                                                                .addGap(10, 10,
-                                                                        10)
                                                                 .addComponent(
                                                                         estimateSelectionBox,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                        GroupLayout.PREFERRED_SIZE,
                                                                         68,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(
-                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                        ComponentPlacement.RELATED)
                                                                 .addComponent(
                                                                         submitButton))
-                                                .addGroup(
-                                                        layout.createSequentialGroup()
-                                                                .addComponent(
-                                                                        endsLabel)
-                                                                .addPreferredGap(
-                                                                        javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                .addComponent(
-                                                                        endTimeField))
-                                                .addGroup(
-                                                        layout.createSequentialGroup()
-                                                                .addComponent(
-                                                                        voteField)
-                                                                .addGap(18, 18,
-                                                                        18)
-                                                                .addComponent(
-                                                                        completedVotesField)))
-                                .addContainerGap(243, Short.MAX_VALUE)));
+                                                .addComponent(
+                                                        completedVotesField)
+                                                .addComponent(endTimeField))
+                                .addContainerGap(10, Short.MAX_VALUE)));
         layout.setVerticalGroup(layout
-                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .createParallelGroup(Alignment.LEADING)
                 .addGroup(
                         layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(
                                         layout.createParallelGroup(
-                                                javax.swing.GroupLayout.Alignment.BASELINE)
+                                                Alignment.BASELINE)
                                                 .addComponent(estimateLabel)
                                                 .addComponent(submitButton)
                                                 .addComponent(
                                                         estimateSelectionBox,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(
-                                        javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        GroupLayout.PREFERRED_SIZE,
+                                                        GroupLayout.DEFAULT_SIZE,
+                                                        GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(ComponentPlacement.RELATED)
                                 .addGroup(
                                         layout.createParallelGroup(
-                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(voteField)
-                                                .addComponent(
-                                                        completedVotesField))
-                                .addPreferredGap(
-                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(
-                                        layout.createParallelGroup(
-                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(endsLabel)
-                                                .addComponent(endTimeField))
-                                .addContainerGap(208, Short.MAX_VALUE)));
+                                                Alignment.TRAILING)
+                                                .addGroup(
+                                                        layout.createSequentialGroup()
+                                                                .addComponent(
+                                                                        voteField)
+                                                                .addPreferredGap(
+                                                                        ComponentPlacement.UNRELATED)
+                                                                .addComponent(
+                                                                        endsLabel))
+                                                .addGroup(
+                                                        layout.createSequentialGroup()
+                                                                .addComponent(
+                                                                        completedVotesField)
+                                                                .addPreferredGap(
+                                                                        ComponentPlacement.UNRELATED)
+                                                                .addComponent(
+                                                                        endTimeField)))
+                                .addContainerGap(15, Short.MAX_VALUE)));
+        setLayout(layout);
     }// </editor-fold>//GEN-END:initComponents
     
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_submitButtonActionPerformed
