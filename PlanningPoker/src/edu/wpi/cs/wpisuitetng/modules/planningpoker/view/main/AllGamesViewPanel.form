@@ -18,7 +18,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="SummaryTablePanel" min="-2" max="-2" attributes="0"/>
+              <Component id="summaryTablePanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSplitPane1" pref="492" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -31,7 +31,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="jSplitPane1" pref="420" max="32767" attributes="0"/>
-                  <Component id="SummaryTablePanel" max="32767" attributes="0"/>
+                  <Component id="summaryTablePanel" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -39,7 +39,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="SummaryTablePanel">
+    <Container class="javax.swing.JPanel" name="summaryTablePanel">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
@@ -68,14 +68,14 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout"/>
       <SubComponents>
-        <Component class="edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.RequirementsPanel" name="requirementsPanel2">
+        <Component class="edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.RequirementsPanel" name="requirementsPanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">
               <JSplitPaneConstraints position="top"/>
             </Constraint>
           </Constraints>
         </Component>
-        <Container class="javax.swing.JPanel" name="jPanel1">
+        <Container class="javax.swing.JPanel" name="detailOrVotePanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">
               <JSplitPaneConstraints position="right"/>
@@ -84,17 +84,17 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
           <SubComponents>
-            <Component class="edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.VotePanel" name="votePanel1">
+            <Component class="edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.VotePanel" name="votePanel">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="card2"/>
+                  <CardConstraints cardName="card1"/>
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.DetailPanel" name="detailPanel1">
+            <Component class="edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.DetailPanel" name="detailPanel">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="card3"/>
+                  <CardConstraints cardName="card2"/>
                 </Constraint>
               </Constraints>
             </Component>
