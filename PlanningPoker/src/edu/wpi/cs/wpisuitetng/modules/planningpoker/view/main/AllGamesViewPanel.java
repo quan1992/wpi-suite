@@ -34,25 +34,12 @@ public class AllGamesViewPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        summaryTablePanel = new javax.swing.JPanel();
         jSplitPane1 = new javax.swing.JSplitPane();
         requirementsPanel = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.RequirementsPanel();
         detailOrVotePanel = new javax.swing.JPanel();
         votePanel = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.VotePanel();
         detailPanel = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.DetailPanel();
-
-        summaryTablePanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        javax.swing.GroupLayout summaryTablePanelLayout = new javax.swing.GroupLayout(summaryTablePanel);
-        summaryTablePanel.setLayout(summaryTablePanelLayout);
-        summaryTablePanelLayout.setHorizontalGroup(
-            summaryTablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 204, Short.MAX_VALUE)
-        );
-        summaryTablePanelLayout.setVerticalGroup(
-            summaryTablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 416, Short.MAX_VALUE)
-        );
+        gamesListPanel1 = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GamesListPanel();
 
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
         jSplitPane1.setTopComponent(requirementsPanel);
@@ -69,9 +56,9 @@ public class AllGamesViewPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(summaryTablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+                .addComponent(gamesListPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -79,8 +66,8 @@ public class AllGamesViewPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
-                    .addComponent(summaryTablePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(gamesListPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -88,9 +75,9 @@ public class AllGamesViewPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel detailOrVotePanel;
     private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.DetailPanel detailPanel;
+    private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GamesListPanel gamesListPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.RequirementsPanel requirementsPanel;
-    private javax.swing.JPanel summaryTablePanel;
     private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.VotePanel votePanel;
     // End of variables declaration//GEN-END:variables
 }
