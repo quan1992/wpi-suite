@@ -2,6 +2,9 @@ package edu.wpi.cs.wpisuitetng.modules.planningpoker.model;
 
 import java.util.Date;
 
+import edu.wpi.cs.wpisuitetng.modules.requirementmanager.models.Requirement;
+import edu.wpi.cs.wpisuitetng.modules.requirementmanager.models.RequirementModel;
+
 /**
  * Represents a planning poker game
  * @author Akshay
@@ -9,12 +12,11 @@ import java.util.Date;
  */
 public class GameModel {
 	
-	public static final int TYPE_LIVE = 0;
-	public static final int TYPE_DISTRIBUTED = 1;
+	public static enum GameType {LIVE, DISTRIBUTED};
 	
-	private String requirement;
+	private Requirement requirement;
 	private Date endDate;
-	private int type;
+	private GameType type;
 	private boolean isEnded;
 	
 	/**
@@ -24,7 +26,7 @@ public class GameModel {
 	 * @param type What type of game this is
 	 * @param finished whether or not the game has been manually ended
 	 */
-	public GameModel(String req, Date end, int type, boolean finished){
+	public GameModel(Requirement req, Date end, GameType type, boolean finished){
 		this.requirement = req;
 		this.endDate = end;
 		this.type = type;
@@ -35,7 +37,7 @@ public class GameModel {
 	 * 
 	 * @return The Requirement for this game
 	 */
-	public String getRequirement(){
+	public Requirement getRequirement(){
 		return requirement;
 	}
 	
@@ -51,7 +53,7 @@ public class GameModel {
 	 * Returns which type of game this is
 	 * @return Either TYPE_LIVE or TYPE_DISTRIBUTED
 	 */
-	public int getType(){
+	public GameType getType(){
 		return type;
 	}
 	

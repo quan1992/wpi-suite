@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
+import edu.wpi.cs.wpisuitetng.modules.core.models.User;
 import edu.wpi.cs.wpisuitetng.modules.planningpoker.controller.SimpleListObserver;
 
 /**
@@ -13,7 +14,7 @@ import edu.wpi.cs.wpisuitetng.modules.planningpoker.controller.SimpleListObserve
  */
 public class EstimateListModel {
 
-	private HashMap<String, Float> estimateList;
+	private HashMap<User, Float> estimateList;
 	private ArrayList<SimpleListObserver> observers;
 
 	public EstimateListModel(){
@@ -36,7 +37,7 @@ public class EstimateListModel {
 	 * @param user
 	 * @param estoimate
 	 */
-	public void addEstimate(String user, Float estimate){
+	public void addEstimate(User user, Float estimate){
 		estimateList.put(user, estimate);	
 		updated();
 	}
@@ -46,7 +47,7 @@ public class EstimateListModel {
 	 * @param user The user to update
 	 * @param estimate The user's new estimate
 	 */
-	public void updateEstimate(String user, Float estimate){
+	public void updateEstimate(User user, Float estimate){
 		if(estimateList.containsKey(user)){
 			estimateList.put(user, estimate);
 			updated();	
@@ -57,7 +58,7 @@ public class EstimateListModel {
 	 * Removes a user and their estimate from the list. Doesn't do anything if the user is not in the list
 	 * @param user the user to remove
 	 */
-	public void removeEstimate(String user){
+	public void removeEstimate(User user){
 		if(estimateList.containsKey(user)){
 			estimateList.remove(user);
 			updated();
@@ -67,8 +68,8 @@ public class EstimateListModel {
 	/**
 	 * @return an array containing the users in the list
 	 */
-	public String[] getUsers(){
-		return estimateList.keySet().toArray(new String[]{});
+	public User[] getUsers(){
+		return estimateList.keySet().toArray(new User[]{});
 
 	}
 

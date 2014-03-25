@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import edu.wpi.cs.wpisuitetng.modules.planningpoker.controller.SimpleListObserver;
+import edu.wpi.cs.wpisuitetng.modules.requirementmanager.models.Requirement;
 
 /**
  * Stores a list of games and their statuses
@@ -11,8 +12,10 @@ import edu.wpi.cs.wpisuitetng.modules.planningpoker.controller.SimpleListObserve
  *
  */
 public class GameListModel {
+	
+	public static enum GameStatus {PENDING, COMPLETE};
 
-	private HashMap<String, String> games;
+	private HashMap<Requirement, GameStatus> games;
 	private ArrayList<SimpleListObserver> observers;
 
 	public GameListModel(){
@@ -35,17 +38,17 @@ public class GameListModel {
 	 * @param req The game to add
 	 * @param status The game's status
 	 */
-	public void addGame(String req, String status){
+	public void addGame(Requirement req, GameStatus status){
 		games.put(req, status);	
 		updated();
 	}
 
 	/**
-	 * Update a game's status. Doesn't do anything if the game is not in the list
+	 * Update a game's status. Doesn't do anything if the game is not in the list.
 	 * @param req The game to update
 	 * @param status The game's new status
 	 */
-	public void updateGame(String req, String status){
+	public void updateGame(Requirement req, GameStatus status){
 		if(games.containsKey(req)){
 			games.put(req, status);
 			updated();	
@@ -56,7 +59,7 @@ public class GameListModel {
 	 * Removes a game from the list. Doesn't do anything if the game is not in the list
 	 * @param req The game to remove
 	 */
-	public void removeGame(String req){
+	public void removeGame(Requirement req){
 		if(games.containsKey(req)){
 			games.remove(req);
 			updated();
@@ -66,15 +69,15 @@ public class GameListModel {
 	/**
 	 * @return an array containing the game in the list
 	 */
-	public String[] getGames(){
-		return games.keySet().toArray(new String[]{});
+	public Requirement[] getGames(){
+		return games.keySet().toArray(new Requirement[]{});
 	}
 
 	/**
 	 * @return an array containing the statuses of the games
 	 */
-	public String[] getStatuses(){
-		return games.values().toArray(new String[]{});
+	public GameStatus[] getStatuses(){
+		return games.values().toArray(new GameStatus[]{});
 	}
 	
 	/**
