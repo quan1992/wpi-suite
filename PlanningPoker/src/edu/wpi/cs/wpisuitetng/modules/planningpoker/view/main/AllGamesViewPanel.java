@@ -35,11 +35,10 @@ public class AllGamesViewPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         SummaryTablePanel = new javax.swing.JPanel();
-        DetailPanel = new javax.swing.JPanel();
-        RequirementPanel = new RequirementsPanel();
-        GameInteractionPanel = new javax.swing.JPanel();
-        VotePanel = new javax.swing.JPanel();
-        FinalDetailsPanel = new javax.swing.JPanel();
+        jSplitPane1 = new javax.swing.JSplitPane();
+        requirementsPanel2 = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.RequirementsPanel();
+        jPanel1 = new javax.swing.JPanel();
+        votePanel1 = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.VotePanel();
 
         SummaryTablePanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -51,73 +50,16 @@ public class AllGamesViewPanel extends javax.swing.JPanel {
         );
         SummaryTablePanelLayout.setVerticalGroup(
             SummaryTablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 416, Short.MAX_VALUE)
         );
 
-        DetailPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
+        jSplitPane1.setTopComponent(requirementsPanel2);
 
-        RequirementPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Requirement"));
+        jPanel1.setLayout(new java.awt.CardLayout());
+        jPanel1.add(votePanel1, "card2");
 
-        javax.swing.GroupLayout RequirementPanelLayout = new javax.swing.GroupLayout(RequirementPanel);
-        RequirementPanel.setLayout(RequirementPanelLayout);
-        RequirementPanelLayout.setHorizontalGroup(
-            RequirementPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        RequirementPanelLayout.setVerticalGroup(
-            RequirementPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 127, Short.MAX_VALUE)
-        );
-
-        GameInteractionPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        GameInteractionPanel.setLayout(new java.awt.CardLayout());
-
-        javax.swing.GroupLayout VotePanelLayout = new javax.swing.GroupLayout(VotePanel);
-        VotePanel.setLayout(VotePanelLayout);
-        VotePanelLayout.setHorizontalGroup(
-            VotePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 383, Short.MAX_VALUE)
-        );
-        VotePanelLayout.setVerticalGroup(
-            VotePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 229, Short.MAX_VALUE)
-        );
-
-        GameInteractionPanel.add(VotePanel, "card2");
-
-        javax.swing.GroupLayout FinalDetailsPanelLayout = new javax.swing.GroupLayout(FinalDetailsPanel);
-        FinalDetailsPanel.setLayout(FinalDetailsPanelLayout);
-        FinalDetailsPanelLayout.setHorizontalGroup(
-            FinalDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 383, Short.MAX_VALUE)
-        );
-        FinalDetailsPanelLayout.setVerticalGroup(
-            FinalDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 229, Short.MAX_VALUE)
-        );
-
-        GameInteractionPanel.add(FinalDetailsPanel, "card3");
-
-        javax.swing.GroupLayout DetailPanelLayout = new javax.swing.GroupLayout(DetailPanel);
-        DetailPanel.setLayout(DetailPanelLayout);
-        DetailPanelLayout.setHorizontalGroup(
-            DetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DetailPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(DetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(GameInteractionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(RequirementPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        DetailPanelLayout.setVerticalGroup(
-            DetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DetailPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(RequirementPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(GameInteractionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jSplitPane1.setRightComponent(jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -126,8 +68,8 @@ public class AllGamesViewPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(SummaryTablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(DetailPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -135,18 +77,17 @@ public class AllGamesViewPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(DetailPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
                     .addComponent(SummaryTablePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel DetailPanel;
-    private javax.swing.JPanel FinalDetailsPanel;
-    private javax.swing.JPanel GameInteractionPanel;
-    private javax.swing.JPanel RequirementPanel;
     private javax.swing.JPanel SummaryTablePanel;
-    private javax.swing.JPanel VotePanel;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSplitPane jSplitPane1;
+    private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.RequirementsPanel requirementsPanel2;
+    private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.VotePanel votePanel1;
     // End of variables declaration//GEN-END:variables
 }
