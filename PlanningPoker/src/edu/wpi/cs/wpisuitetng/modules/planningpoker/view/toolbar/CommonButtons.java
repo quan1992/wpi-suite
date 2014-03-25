@@ -21,7 +21,6 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import edu.wpi.cs.wpisuitetng.janeway.gui.container.toolbar.ToolbarGroupView;
-import edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.NewGameDialog;
 
 /**
  * this is an example of buttons
@@ -49,8 +48,6 @@ public class CommonButtons extends ToolbarGroupView {
         newGameButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                NewGameDialog newGameDialog = new NewGameDialog();
-                newGameDialog.setVisible(true);
             }
         });
         
