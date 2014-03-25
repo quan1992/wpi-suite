@@ -42,7 +42,7 @@ public class GamesListPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Status", "Requirement"
+                "Status", "Game"
             }
         ) {
             Class[] types = new Class [] {

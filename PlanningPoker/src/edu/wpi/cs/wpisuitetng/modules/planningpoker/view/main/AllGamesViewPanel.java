@@ -39,7 +39,7 @@ public class AllGamesViewPanel extends javax.swing.JPanel {
         detailOrVotePanel = new javax.swing.JPanel();
         votePanel = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.VotePanel();
         detailPanel = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.DetailPanel();
-        gamesListPanel1 = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GamesListPanel();
+        gamesListPanel = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GamesListPanel();
 
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
         jSplitPane1.setTopComponent(requirementsPanel);
@@ -56,9 +56,9 @@ public class AllGamesViewPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(gamesListPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(gamesListPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -66,7 +66,7 @@ public class AllGamesViewPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(gamesListPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(gamesListPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -75,7 +75,7 @@ public class AllGamesViewPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel detailOrVotePanel;
     private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.DetailPanel detailPanel;
-    private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GamesListPanel gamesListPanel1;
+    private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GamesListPanel gamesListPanel;
     private javax.swing.JSplitPane jSplitPane1;
     private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.RequirementsPanel requirementsPanel;
     private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.VotePanel votePanel;

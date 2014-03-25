@@ -5,28 +5,24 @@
  */
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.LayoutStyle.ComponentPlacement;
-
 /**
- * 
+ *
  * @author nfbrown
  */
 public class VotePanel extends javax.swing.JPanel {
-    
+
     /**
      *
      */
     private static final long serialVersionUID = 6053116033835102214L;
-    
+
     /**
      * Creates new form VotePanel
      */
     public VotePanel() {
         initComponents();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,9 +30,9 @@ public class VotePanel extends javax.swing.JPanel {
      */
     // <editor-fold defaultstate="collapsed"
     // <editor-fold defaultstate="collapsed"
-    // desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        
+
         estimateLabel = new javax.swing.JLabel();
         voteField = new javax.swing.JLabel();
         completedVotesField = new javax.swing.JLabel();
@@ -44,119 +40,92 @@ public class VotePanel extends javax.swing.JPanel {
         endTimeField = new javax.swing.JLabel();
         submitButton = new javax.swing.JButton();
         estimateSelectionBox = new javax.swing.JComboBox<Float>();
-        
+        votesProgressBar = new javax.swing.JProgressBar();
+
         estimateLabel.setText("Estimate:");
-        
+
         voteField.setText("Votes:");
-        
+
         completedVotesField.setText("0/15");
-        
+
         endsLabel.setText("Ends at:");
-        
+
         endTimeField.setText("3/23 6:00 PM");
-        
+
         submitButton.setText("Submit");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitButtonActionPerformed(evt);
             }
         });
-        
-        estimateSelectionBox
-                .setModel(new javax.swing.DefaultComboBoxModel<Float>(
-                        new Float[] { 0.5f, 1f, 2f, 3f, 10f, 20f, 50f, 100f }));
-        estimateSelectionBox
-                .addActionListener(new java.awt.event.ActionListener() {
-                    @Override
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        estimateSelectionBoxActionPerformed(evt);
-                    }
-                });
-        
+
+        estimateSelectionBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0.5", "1", "2", "3", "10", "20", "50", "100" }));
+        estimateSelectionBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                estimateSelectionBoxActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        layout.setHorizontalGroup(layout
-                .createParallelGroup(Alignment.LEADING)
-                .addGroup(
-                        layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(
-                                        layout.createParallelGroup(
-                                                Alignment.LEADING)
-                                                .addComponent(estimateLabel)
-                                                .addComponent(voteField)
-                                                .addComponent(endsLabel))
-                                .addGap(10)
-                                .addGroup(
-                                        layout.createParallelGroup(
-                                                Alignment.LEADING)
-                                                .addGroup(
-                                                        layout.createSequentialGroup()
-                                                                .addComponent(
-                                                                        estimateSelectionBox,
-                                                                        GroupLayout.PREFERRED_SIZE,
-                                                                        68,
-                                                                        GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(
-                                                                        ComponentPlacement.RELATED)
-                                                                .addComponent(
-                                                                        submitButton))
-                                                .addComponent(
-                                                        completedVotesField)
-                                                .addComponent(endTimeField))
-                                .addContainerGap(10, Short.MAX_VALUE)));
-        layout.setVerticalGroup(layout
-                .createParallelGroup(Alignment.LEADING)
-                .addGroup(
-                        layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(
-                                        layout.createParallelGroup(
-                                                Alignment.BASELINE)
-                                                .addComponent(estimateLabel)
-                                                .addComponent(submitButton)
-                                                .addComponent(
-                                                        estimateSelectionBox,
-                                                        GroupLayout.PREFERRED_SIZE,
-                                                        GroupLayout.DEFAULT_SIZE,
-                                                        GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(ComponentPlacement.RELATED)
-                                .addGroup(
-                                        layout.createParallelGroup(
-                                                Alignment.TRAILING)
-                                                .addGroup(
-                                                        layout.createSequentialGroup()
-                                                                .addComponent(
-                                                                        voteField)
-                                                                .addPreferredGap(
-                                                                        ComponentPlacement.UNRELATED)
-                                                                .addComponent(
-                                                                        endsLabel))
-                                                .addGroup(
-                                                        layout.createSequentialGroup()
-                                                                .addComponent(
-                                                                        completedVotesField)
-                                                                .addPreferredGap(
-                                                                        ComponentPlacement.UNRELATED)
-                                                                .addComponent(
-                                                                        endTimeField)))
-                                .addContainerGap(15, Short.MAX_VALUE)));
-        setLayout(layout);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(estimateLabel)
+                        .addGap(10, 10, 10)
+                        .addComponent(estimateSelectionBox, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(submitButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(voteField)
+                        .addGap(18, 18, 18)
+                        .addComponent(votesProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(completedVotesField))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(endsLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(endTimeField)))
+                .addContainerGap(216, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(estimateLabel)
+                    .addComponent(submitButton)
+                    .addComponent(estimateSelectionBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(voteField)
+                        .addComponent(completedVotesField))
+                    .addComponent(votesProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(endsLabel)
+                    .addComponent(endTimeField))
+                .addContainerGap(208, Short.MAX_VALUE))
+        );
     }// </editor-fold>//GEN-END:initComponents
-    
+
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_submitButtonActionPerformed
-    
+
     private void estimateSelectionBoxActionPerformed(
             java.awt.event.ActionEvent evt) {// GEN-FIRST:event_estimateSelectionBoxActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_estimateSelectionBoxActionPerformed
-    
+
     private void estimateFieldActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_estimateFieldActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_estimateFieldActionPerformed
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel completedVotesField;
     private javax.swing.JLabel endTimeField;
@@ -165,5 +134,6 @@ public class VotePanel extends javax.swing.JPanel {
     private javax.swing.JComboBox<Float> estimateSelectionBox;
     private javax.swing.JButton submitButton;
     private javax.swing.JLabel voteField;
+    private javax.swing.JProgressBar votesProgressBar;
     // End of variables declaration//GEN-END:variables
 }
