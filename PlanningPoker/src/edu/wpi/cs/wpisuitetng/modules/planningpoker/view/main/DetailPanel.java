@@ -50,12 +50,10 @@ public class DetailPanel extends javax.swing.JPanel {
              * 
              */
             private static final long serialVersionUID = -7096581768469572698L;
-            @SuppressWarnings("rawtypes")
             Class[] types = new Class[] { java.lang.Object.class,
                     java.lang.Double.class };
             boolean[] canEdit = new boolean[] { false, false };
             
-            @SuppressWarnings("rawtypes")
             @Override
             public Class getColumnClass(int columnIndex) {
                 return types[columnIndex];
