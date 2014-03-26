@@ -5,6 +5,9 @@
  */
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 
+import javax.swing.JTable;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 import edu.wpi.cs.wpisuitetng.modules.planningpoker.controller.SimpleListObserver;
@@ -24,16 +27,32 @@ public class GamesListPanel extends javax.swing.JPanel {
     /**
      * Creates new form GamesListPanel
      */
-    public GamesListPanel(final GameListModel gameList) {
+    public GamesListPanel(GameListModel gameList) {
         initComponents();
         jTable1.getColumnModel().getColumn(0).setPreferredWidth(40);
+        
+        this.gameList = gameList;
         gameList.addListListener(new SimpleListObserver() {
             
             @Override
             public void listUpdated() {
-                updateTable(gameList);
+                updateTable(GamesListPanel.this.gameList);
             }
         });
+    }
+    
+    private GameListModel gameList;
+    
+    public GameListModel getGameList() {
+        return gameList;
+    }
+
+    public void setGameList(GameListModel gameList) {
+        this.gameList = gameList;
+    }
+
+    public JTable getGamesTable() {
+        return jTable1;
     }
     
     private void updateTable(GameListModel gameList) {

@@ -1,5 +1,8 @@
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
 import edu.wpi.cs.wpisuitetng.modules.planningpoker.model.GameListModel;
 
 /*
@@ -23,6 +26,13 @@ public class AllGamesViewPanel extends javax.swing.JPanel {
      */
     public AllGamesViewPanel() {
         initComponents();
+        gamesListPanel1.getGamesTable().getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                //requirementsPanel1.setGame(gamesListPanel1.getGameList().getGames()[e.getFirstIndex()]);
+            }
+        });
     }
 
     /**
