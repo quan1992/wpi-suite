@@ -27,14 +27,14 @@ public class GetGamesRequestObserver implements RequestObserver {
     }
     
     /**
-     * Parse the requirements out of the response body and pass them to the
+     * Parse the games out of the response body and pass them to the
      * controller
      * 
      * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#responseSuccess(edu.wpi.cs.wpisuitetng.network.models.IRequest)
      */
     @Override
     public void responseSuccess(IRequest iReq) {
-        // Convert the JSON array of requirements to a Games object array
+        // Convert the JSON array of games to a Games object array
         // GameModel[] games = GameModel.fromJsonArray(iReq.getResponse().getBody());
         
         // Pass these Games to the controller
@@ -50,7 +50,7 @@ public class GetGamesRequestObserver implements RequestObserver {
     }
     
     /**
-     * Put an error requirement in the PostBoardPanel if the request fails.
+     * Put an error games in the PostBoardPanel if the request fails.
      * 
      * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#fail(edu.wpi.cs.wpisuitetng.network.models.IRequest,
      *      java.lang.Exception)
