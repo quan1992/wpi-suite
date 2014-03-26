@@ -1,5 +1,7 @@
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 
+import edu.wpi.cs.wpisuitetng.modules.planningpoker.model.GameListModel;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -35,7 +37,7 @@ public class AllGamesViewPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jSplitPane3 = new javax.swing.JSplitPane();
-        gamesListPanel1 = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GamesListPanel();
+        gamesListPanel1 = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GamesListPanel(new GameListModel());
         jSplitPane4 = new javax.swing.JSplitPane();
         requirementsPanel1 = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.RequirementsPanel();
         jPanel1 = new javax.swing.JPanel();
