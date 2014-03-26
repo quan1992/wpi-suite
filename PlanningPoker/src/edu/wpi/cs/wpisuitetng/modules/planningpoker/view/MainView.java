@@ -14,6 +14,7 @@ package edu.wpi.cs.wpisuitetng.modules.planningpoker.view;
 import javax.swing.JTabbedPane;
 
 import edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.AllGamesViewPanel;
+import edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.EditGame;
 
 /**
  * This is the main panel of the planning poker GUI
@@ -30,8 +31,10 @@ public class MainView extends JTabbedPane {
     
     public MainView() {
         AllGamesViewPanel mainPanel = new AllGamesViewPanel();
+        EditGame example = new EditGame();
         
         addTab("Games", null, mainPanel, null);
+        addTab("Game 0", null, example, null);
         
     }
 }
