@@ -34,7 +34,7 @@ public class MainView extends JTabbedPane {
         EditGame example = new EditGame();
         
         addTab("Games", null, mainPanel, null);
-        addTab("Game 0", null, example, null);
+        addTab("New Game", null, example, null);
         
     }
 }
