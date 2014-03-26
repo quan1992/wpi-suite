@@ -11,6 +11,7 @@
  */
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 
+import edu.wpi.cs.wpisuitetng.modules.planningpoker.model.Game;
 import edu.wpi.cs.wpisuitetng.modules.planningpoker.model.GameModel;
 
 /**
@@ -33,16 +34,16 @@ public class RequirementsPanel extends javax.swing.JPanel {
         initComponents();
     }
     
-    private GameModel game;
+    private Game game;
     
-    public GameModel getGame() {
+    public Game getGame() {
         return game;
     }
     
-    public void setGame(GameModel game) {
+    public void setGame(Game game) {
         this.game = game;
-        nameField.setText(game.getRequirement().getName());
-        descriptionPane.setText(game.getRequirement().getDescription());
+        nameField.setText(game.getName());
+        descriptionPane.setText(game.getDescription());
     }
     
     /**

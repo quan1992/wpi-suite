@@ -6,12 +6,11 @@
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 
 import javax.swing.JTable;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 import edu.wpi.cs.wpisuitetng.modules.planningpoker.controller.SimpleListObserver;
-import edu.wpi.cs.wpisuitetng.modules.planningpoker.model.GameListModel;
+import edu.wpi.cs.wpisuitetng.modules.planningpoker.model.Game;
+import edu.wpi.cs.wpisuitetng.modules.planningpoker.model.GameModel;
 
 /**
  * 
@@ -27,7 +26,7 @@ public class GamesListPanel extends javax.swing.JPanel {
     /**
      * Creates new form GamesListPanel
      */
-    public GamesListPanel(GameListModel gameList) {
+    public GamesListPanel(GameModel gameList) {
         initComponents();
         jTable1.getColumnModel().getColumn(0).setPreferredWidth(40);
         
@@ -41,28 +40,27 @@ public class GamesListPanel extends javax.swing.JPanel {
         });
     }
     
-    private GameListModel gameList;
+    private GameModel gameList;
     
-    public GameListModel getGameList() {
+    public GameModel getGameList() {
         return gameList;
     }
-
-    public void setGameList(GameListModel gameList) {
+    
+    public void setGameList(GameModel gameList) {
         this.gameList = gameList;
     }
-
+    
     public JTable getGamesTable() {
         return jTable1;
     }
     
-    private void updateTable(GameListModel gameList) {
+    private void updateTable(GameModel gameList) {
         DefaultTableModel m = (DefaultTableModel) jTable1.getModel();
-        for (int i = m.getRowCount(); i >= 0; i--) {
+        for (int i = m.getRowCount() - 1; i >= 0; i--) {
             m.removeRow(i);
         }
-        for (int i = 0; i < gameList.getNumGames(); i++) {
-            m.addRow(new Object[] { gameList.getStatuses()[i].name(),
-                    gameList.getGames()[i].getName() });
+        for (Game g : gameList.getGames()) {
+            m.addRow(new Object[] { g.isEnded(), g.getName() });
         }
     }
     

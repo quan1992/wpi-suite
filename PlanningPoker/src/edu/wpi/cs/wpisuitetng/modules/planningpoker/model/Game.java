@@ -38,7 +38,9 @@ public class Game extends AbstractListModel<Estimate> {
     
 	private ArrayList<Estimate> estimateList;
     private ArrayList<SimpleListObserver> observers;
-    
+
+    private String name;
+    private String description;
     private Requirement[] requirements;
     private Date endDate;
     private GameType type;
@@ -52,7 +54,9 @@ public class Game extends AbstractListModel<Estimate> {
      * @param type
      * @param status
      */
-    public Game(Requirement[] requirements, Date end, GameType type, GameStatus status) {
+    public Game(String name, String description, Requirement[] requirements, Date end, GameType type, GameStatus status) {
+        this.name = name;
+        this.description = description;
         this.requirements = requirements;
         this.endDate = end;
         this.type = type;
@@ -70,7 +74,9 @@ public class Game extends AbstractListModel<Estimate> {
      * @param status
      * @param estimates
      */
-    public Game(Requirement[] requirements, Date end, GameType type, GameStatus status, ArrayList<Estimate> estimates) {
+    public Game(String name, String description, Requirement[] requirements, Date end, GameType type, GameStatus status, ArrayList<Estimate> estimates) {
+        this.name = name;
+        this.description = description;
         this.requirements = requirements;
         this.endDate = end;
         this.type = type;
@@ -78,6 +84,22 @@ public class Game extends AbstractListModel<Estimate> {
         this.estimateList = estimates;
         
         observers = new ArrayList<SimpleListObserver>();
+    }
+    
+    /**
+     * 
+     * @return the name of this game
+     */
+    public String getName() {
+        return name;
+    }
+    
+    /**
+     * 
+     * @return the name of this game
+     */
+    public String getDescription() {
+        return description;
     }
     
     
