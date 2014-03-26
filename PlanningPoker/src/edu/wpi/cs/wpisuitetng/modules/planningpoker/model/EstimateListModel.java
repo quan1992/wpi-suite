@@ -1,7 +1,12 @@
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+
+import javax.swing.AbstractListModel;
+
+import com.google.gson.Gson;
 
 import edu.wpi.cs.wpisuitetng.modules.core.models.User;
 import edu.wpi.cs.wpisuitetng.modules.planningpoker.controller.SimpleListObserver;
@@ -12,7 +17,7 @@ import edu.wpi.cs.wpisuitetng.modules.planningpoker.controller.SimpleListObserve
  * @author Akshay
  * 
  */
-public class EstimateListModel {
+public class EstimateListModel extends AbstractListModel {
     
     private HashMap<User, Float> estimateList;
     private ArrayList<SimpleListObserver> observers;
@@ -87,8 +92,8 @@ public class EstimateListModel {
     /**
      * @return an array containing all of the estimates
      */
-    public String[] getEstimates() {
-        return estimateList.values().toArray(new String[] {});
+    public Float[] getEstimates() {
+        return estimateList.values().toArray(new Float[] {});
     }
     
     /**
@@ -126,5 +131,15 @@ public class EstimateListModel {
             observer.listUpdated();
         }
     }
+
+	@Override
+	public int getSize() {
+		return estimateList.size();
+	}
+
+	@Override
+	public Object getElementAt(int index) {
+		return null;
+	}
     
 }
