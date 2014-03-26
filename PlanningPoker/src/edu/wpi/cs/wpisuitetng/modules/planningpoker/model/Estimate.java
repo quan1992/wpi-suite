@@ -5,12 +5,12 @@ import com.google.gson.Gson;
 import edu.wpi.cs.wpisuitetng.modules.AbstractModel;
 import edu.wpi.cs.wpisuitetng.modules.core.models.User;
 
-public class EstimateModel extends AbstractModel {
+public class Estimate extends AbstractModel {
 	
 	private User user;
 	private float estimate;
 	
-	public EstimateModel(User user, float estimate){
+	public Estimate(User user, float estimate){
 		this.user = user;
 		this.estimate = estimate;
 	}
@@ -40,7 +40,7 @@ public class EstimateModel extends AbstractModel {
 	}
 	@Override
 	public String toJSON() {
-		return new Gson().toJson(this, EstimateModel.class);
+		return new Gson().toJson(this, Estimate.class);
 	}
 
 }
