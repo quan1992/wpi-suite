@@ -8,6 +8,7 @@ import edu.wpi.cs.wpisuitetng.network.models.IRequest;
 import edu.wpi.cs.wpisuitetng.network.models.ResponseModel;
 
 /**
+ * This handles all game creation requests
  * @author Brett Ammeson
  * 
  */
