@@ -42,7 +42,7 @@ public class GamesListPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Status", "Game"
+                "", "Game"
             }
         ) {
             Class[] types = new Class [] {
@@ -63,7 +63,9 @@ public class GamesListPanel extends javax.swing.JPanel {
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(0).setMinWidth(30);
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(30);
+            jTable1.getColumnModel().getColumn(0).setMaxWidth(30);
         }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
