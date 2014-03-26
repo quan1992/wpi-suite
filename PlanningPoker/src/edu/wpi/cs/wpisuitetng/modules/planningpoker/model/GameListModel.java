@@ -81,6 +81,13 @@ public class GameListModel {
 	}
 	
 	/**
+	 * @return the number of games in this model
+	 */
+	public int getNumGames() {
+	    return games.size();
+	}
+	
+	/**
 	 * Notifies all observers when that the list has changed
 	 */
 	private void updated() {
