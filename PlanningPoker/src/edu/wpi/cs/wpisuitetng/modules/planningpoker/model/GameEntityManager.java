@@ -1,4 +1,4 @@
-package entitymanagers;
+package edu.wpi.cs.wpisuitetng.modules.planningpoker.model;
 
 import java.util.List;
 
@@ -13,7 +13,6 @@ import edu.wpi.cs.wpisuitetng.modules.EntityManager;
 import edu.wpi.cs.wpisuitetng.modules.Model;
 import edu.wpi.cs.wpisuitetng.modules.core.models.Role;
 import edu.wpi.cs.wpisuitetng.modules.core.models.User;
-import edu.wpi.cs.wpisuitetng.modules.planningpoker.model.Game;
 
 
 public class GameEntityManager implements EntityManager<Game> {
