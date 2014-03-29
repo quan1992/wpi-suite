@@ -3,8 +3,9 @@ package edu.wpi.cs.wpisuitetng.modules.planningpoker.model;
 import java.util.ArrayList;
 import java.util.Date;
 
-import javax.swing.AbstractListModel;
+import com.google.gson.Gson;
 
+import edu.wpi.cs.wpisuitetng.modules.AbstractModel;
 import edu.wpi.cs.wpisuitetng.modules.planningpoker.controller.SimpleListObserver;
 import edu.wpi.cs.wpisuitetng.modules.requirementmanager.models.Requirement;
 
@@ -14,7 +15,7 @@ import edu.wpi.cs.wpisuitetng.modules.requirementmanager.models.Requirement;
  * @author Akshay
  * 
  */
-public class Game extends AbstractListModel<Estimate> {
+public class Game extends AbstractModel {
     
 	/**
 	 * 
@@ -39,12 +40,28 @@ public class Game extends AbstractListModel<Estimate> {
 	private ArrayList<Estimate> estimateList;
     private ArrayList<SimpleListObserver> observers;
 
+    private int id;
     private String name;
     private String description;
     private Requirement[] requirements;
     private Date endDate;
     private GameType type;
     private GameStatus status;
+    
+    /**
+     * Default constructor, do not use this except in GameEntityManager
+     */
+    public Game() {
+        this.id = -1;
+        this.name = null;
+        this.description = null;
+        this.requirements = null;
+        this.endDate = null;
+        this.type = null;
+        this.status = null;   
+        estimateList = null;
+        observers = null;
+    }
     
 
     /**
@@ -96,10 +113,41 @@ public class Game extends AbstractListModel<Estimate> {
     
     /**
      * 
+     */
+    
+    public void copyFrom(Game g) {
+        this.id = g.id;
+        this.name = g.name;
+        this.description = g.description;
+        this.requirements = g.requirements;
+        this.endDate = g.endDate;
+        this.type = g.type;
+        this.status = g.status;   
+        this.estimateList = g.estimateList;
+        this.observers = g.observers;
+    }
+    
+    /**
+     * 
      * @return the name of this game
      */
     public String getDescription() {
         return description;
+    }
+    
+    /**
+     * @param id
+     */
+    public void setID(int id) {
+        this.id = id;
+    }
+    
+    /**
+     * 
+     * @return the ID of this game
+     */
+    public int getID() {
+        return this.id;
     }
     
     
@@ -222,14 +270,41 @@ public class Game extends AbstractListModel<Estimate> {
         }
     }
     
-	@Override
 	public int getSize() {
 		return estimateList.size();
 	}
 	
-	@Override
 	public Estimate getElementAt(int index) {
 		return estimateList.get(index);
 	}
+
+    @Override
+    public void delete() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public Boolean identify(Object arg0) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public void save() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public String toJSON() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    
+    public static Game fromJSON(String json) {
+        final Gson parser = new Gson();
+        return parser.fromJson(json, Game.class);
+    }
     
 }
