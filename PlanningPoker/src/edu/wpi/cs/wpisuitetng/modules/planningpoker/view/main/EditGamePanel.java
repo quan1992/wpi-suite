@@ -3,19 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 
 /**
  *
  * @author Lukas
  */
-public class EditGame extends javax.swing.JPanel {
+public class EditGamePanel extends javax.swing.JPanel {
 
     /**
      * Creates new form EditGame
      */
-    public EditGame() {
+    public EditGamePanel() {
         initComponents();
     }
 
@@ -30,8 +29,8 @@ public class EditGame extends javax.swing.JPanel {
 
         saveButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
-        gameRequirements1 = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GameRequirements();
-        gameDescription1 = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GameDescription();
+        gameRequirements1 = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GameRequirementsPanel();
+        gameDescription1 = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GameDescriptionPanel();
 
         saveButton.setText("Save");
 
@@ -69,11 +68,10 @@ public class EditGame extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelButton;
-    private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GameDescription gameDescription1;
-    private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GameRequirements gameRequirements1;
+    private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GameDescriptionPanel gameDescription1;
+    private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GameRequirementsPanel gameRequirements1;
     private javax.swing.JButton saveButton;
     // End of variables declaration//GEN-END:variables
 }

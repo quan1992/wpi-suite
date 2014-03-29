@@ -64,9 +64,9 @@
         <Property name="text" type="java.lang.String" value="Cancel"/>
       </Properties>
     </Component>
-    <Component class="edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GameRequirements" name="gameRequirements1">
+    <Component class="edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GameRequirementsPanel" name="gameRequirements1">
     </Component>
-    <Component class="edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GameDescription" name="gameDescription1">
+    <Component class="edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GameDescriptionPanel" name="gameDescription1">
     </Component>
   </SubComponents>
 </Form>

@@ -3,19 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 
 /**
  *
  * @author Lukas
  */
-public class GameRequirements extends javax.swing.JPanel {
+public class GameRequirementsPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form GameRequirements
      */
-    public GameRequirements() {
+    public GameRequirementsPanel() {
         initComponents();
     }
 
@@ -83,7 +82,6 @@ public class GameRequirements extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
