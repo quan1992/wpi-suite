@@ -3,19 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 
 /**
  *
  * @author Lukas
  */
-public class GameDescription extends javax.swing.JPanel {
+public class GameDescriptionPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form GameDescription
      */
-    public GameDescription() {
+    public GameDescriptionPanel() {
         initComponents();
     }
 
@@ -128,7 +127,6 @@ public class GameDescription extends javax.swing.JPanel {
                 .addGap(24, 24, 24))
         );
     }// </editor-fold>//GEN-END:initComponents
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox comboDay;
