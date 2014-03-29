@@ -183,8 +183,10 @@ public class GameModel extends AbstractModel {
     }
     
     public boolean isEnded() {
-        return (status == GameStatus.COMPLETE)
-                || (endDate.before(new Date(System.currentTimeMillis())));
+        if((endDate.before(new Date(System.currentTimeMillis())))){
+            setEnded(true);
+        }
+        return (status == GameStatus.COMPLETE);
     }
     
     /**
