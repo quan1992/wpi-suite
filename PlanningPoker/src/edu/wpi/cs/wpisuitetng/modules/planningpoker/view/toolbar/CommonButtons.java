@@ -25,7 +25,6 @@ import javax.swing.SwingConstants;
 
 import edu.wpi.cs.wpisuitetng.janeway.gui.container.toolbar.ToolbarGroupView;
 import edu.wpi.cs.wpisuitetng.modules.planningpoker.PlanningPoker;
-import edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.EditGame;
 
 /**
  * this is an example of buttons
@@ -63,7 +62,7 @@ public class CommonButtons extends ToolbarGroupView {
         newGameButton.addActionListener(new ActionListener(){
         	@Override
         	public void actionPerformed(ActionEvent e){
-        		PlanningPoker.getViewController().addNewGame();
+        		PlanningPoker.getViewController().addNewGameTab();
         	}
         });
         

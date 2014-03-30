@@ -5,6 +5,10 @@
  */
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 /**
  *
  * @author Lukas
@@ -39,8 +43,8 @@ public class GameDescriptionPanel extends javax.swing.JPanel {
         comboYear = new javax.swing.JComboBox();
         notifyEmail = new javax.swing.JCheckBox();
         notifySMS = new javax.swing.JCheckBox();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        distributed = new javax.swing.JRadioButton();
+        live = new javax.swing.JRadioButton();
 
         nameLabel.setText("Name:");
 
@@ -61,11 +65,11 @@ public class GameDescriptionPanel extends javax.swing.JPanel {
 
         notifySMS.setText("Notify by SMS");
 
-        gameType.add(jRadioButton1);
-        jRadioButton1.setText("Distributed Game");
+        gameType.add(distributed);
+        distributed.setText("Distributed Game");
 
-        gameType.add(jRadioButton2);
-        jRadioButton2.setText("Live Game");
+        gameType.add(live);
+        live.setText("Live Game");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -79,8 +83,8 @@ public class GameDescriptionPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(selectDeadline)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2))
+                            .addComponent(distributed)
+                            .addComponent(live))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(notifyEmail)
@@ -119,29 +123,37 @@ public class GameDescriptionPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(notifyEmail)
-                            .addComponent(jRadioButton1))
+                            .addComponent(distributed))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(notifySMS)
-                            .addComponent(jRadioButton2))))
+                            .addComponent(live))))
                 .addGap(24, 24, 24))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+   
+    public Date getDate(){
+        //Calendar c = new GregorianCalendar();
+        //c.set((Integer)comboYear.getSelectedItem(), (Integer)comboMonth.getSelectedItem(), (Integer)comboDay.getSelectedItem());
+        //return c.getTime();
+    	return new Date();
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox comboDay;
     private javax.swing.JComboBox comboMonth;
     private javax.swing.JComboBox comboYear;
-    private javax.swing.JTextPane descriptionField;
+    public javax.swing.JTextPane descriptionField;
     private javax.swing.JLabel descriptionLabel;
-    private javax.swing.ButtonGroup gameType;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    public javax.swing.JRadioButton distributed;
+    public javax.swing.ButtonGroup gameType;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField nameField;
+    public javax.swing.JRadioButton live;
+    public javax.swing.JTextField nameField;
     private javax.swing.JLabel nameLabel;
-    private javax.swing.JCheckBox notifyEmail;
-    private javax.swing.JCheckBox notifySMS;
-    private javax.swing.JCheckBox selectDeadline;
+    public javax.swing.JCheckBox notifyEmail;
+    public javax.swing.JCheckBox notifySMS;
+    public javax.swing.JCheckBox selectDeadline;
     // End of variables declaration//GEN-END:variables
 }

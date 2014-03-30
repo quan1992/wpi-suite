@@ -21,7 +21,7 @@ public class AddGameController {
 	/**
 	 * Construct an AddGameController for the given model, view pair
 	 */
-	private AddGameController() {
+	public AddGameController() {
 		setObserver(new AddGameRequestObserver(this));
 	}
 

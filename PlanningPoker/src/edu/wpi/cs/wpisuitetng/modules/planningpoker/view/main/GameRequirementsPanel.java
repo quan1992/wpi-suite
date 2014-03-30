@@ -5,6 +5,10 @@
  */
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 
+import edu.wpi.cs.wpisuitetng.modules.requirementmanager.models.Requirement;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Lukas
@@ -33,14 +37,14 @@ public class GameRequirementsPanel extends javax.swing.JPanel {
 
         requirementsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                { new Boolean(false), "Requiment 0", "A Requirement", "User Story"}
+
             },
             new String [] {
                 "Add", "Name", "Description", "Type"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Boolean.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Boolean.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 true, false, false, false
@@ -83,6 +87,24 @@ public class GameRequirementsPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    public void addRequirement(Requirement r){
+    	System.out.println("added requirement "+r.toString());
+        DefaultTableModel model = (DefaultTableModel)requirementsTable.getModel();
+        model.addRow(new Object[]{false, r, r.getDescription().toString(), r.getType().toString()});
+        requirementsTable.setModel(model);
+    }
+    
+    public Requirement[] getRequirementsFromTable(){
+        DefaultTableModel model = (DefaultTableModel)requirementsTable.getModel();
+        Requirement[] requirements = new Requirement[model.getRowCount()];
+        for(int i = 0; i < model.getRowCount(); i++){
+            requirements[i] = (Requirement)model.getValueAt(i, 1);
+            System.out.println("found "+requirements[i].toString()+" in table");
+        }
+        return requirements;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JScrollPane jScrollPane1;

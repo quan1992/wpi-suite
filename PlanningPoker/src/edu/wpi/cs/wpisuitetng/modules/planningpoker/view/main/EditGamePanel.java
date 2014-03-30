@@ -5,6 +5,12 @@
  */
 package edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main;
 
+import edu.wpi.cs.wpisuitetng.modules.planningpoker.PlanningPoker;
+import edu.wpi.cs.wpisuitetng.modules.planningpoker.model.GameModel.GameType;
+import edu.wpi.cs.wpisuitetng.modules.requirementmanager.models.Requirement;
+
+import java.util.Date;
+
 /**
  *
  * @author Lukas
@@ -16,6 +22,13 @@ public class EditGamePanel extends javax.swing.JPanel {
      */
     public EditGamePanel() {
         initComponents();
+        
+        // dummy requirements for test
+        gameRequirements1.addRequirement(new Requirement(0, "Test Requirement 1", "The cow"));
+        gameRequirements1.addRequirement(new Requirement(1, "Test Requirement 2", "elepahnt"));
+        gameRequirements1.addRequirement(new Requirement(2, "Test Requirement 5", "queso"));
+        
+        
     }
 
     /**
@@ -33,8 +46,18 @@ public class EditGamePanel extends javax.swing.JPanel {
         gameDescription1 = new edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GameDescriptionPanel();
 
         saveButton.setText("Save");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonActionPerformed(evt);
+            }
+        });
 
         cancelButton.setText("Cancel");
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -68,6 +91,38 @@ public class EditGamePanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+    	PlanningPoker.getViewController().saveNewGame(this);
+    }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
+        PlanningPoker.getViewController().cancelNewGame(this);
+    }//GEN-LAST:event_cancelButtonActionPerformed
+
+    public String getName(){
+        return gameDescription1.nameField.getText();
+    }
+    
+    public String getDescription(){
+        return gameDescription1.descriptionField.getText();
+    }
+    
+    public GameType getGameType(){
+        if(gameDescription1.distributed.isSelected()){
+            return GameType.DISTRIBUTED;
+        } else {
+            return GameType.LIVE;            
+        }
+    }
+    
+    public Date getEndDate(){
+        return gameDescription1.getDate();
+    }
+    
+    public Requirement[] getRequirements(){
+        return gameRequirements1.getRequirementsFromTable();
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelButton;
     private edu.wpi.cs.wpisuitetng.modules.planningpoker.view.main.GameDescriptionPanel gameDescription1;
