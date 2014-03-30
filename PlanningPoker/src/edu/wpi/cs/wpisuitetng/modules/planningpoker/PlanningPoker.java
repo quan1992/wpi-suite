@@ -29,7 +29,7 @@ import edu.wpi.cs.wpisuitetng.modules.planningpoker.view.ToolbarView;
  * @author TODO: Authors' names
  * 
  */
-public class PlanningPoker implements IJanewayModul
+public class PlanningPoker implements IJanewayModul	as
     
     List<JanewayTabModel> tabs;
     
